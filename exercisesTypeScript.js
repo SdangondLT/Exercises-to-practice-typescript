@@ -16,20 +16,23 @@ var resultadoDoble = function (a, b) {
 };
 console.log("Exercise #3: ", resultadoDoble(2, 2));
 var getAvenger = function (nombre, poder, arma) {
-    if (arma === void 0) { arma = "0"; }
-    if (arma === "0") {
+    if (poder === void 0) { poder = "volar"; }
+    if (arma === void 0) {
         arma = "arco";
     }
     var mensaje;
     if (poder) {
+        mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
         mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma + " ";
     }
     else {
-        mensaje = nombre + " tiene un arma: " + arma;
+        mensaje = nombre + " tiene un " + poder;
+        mensaje = nombre + " tiene un: " + poder;
     }
     return mensaje;
 };
-console.log("Exercise #4: ", getAvenger("Mujer maravilla", "volar", "flecha"));
+console.log("Exercise #4: ", getAvenger("Mujer maravilla"));
+console.log("Exercise #4.1: ", getAvenger("Mujer maravilla", "ser inmortal", "lazo de la verdad"));
 var Rectangulo = /** @class */ (function () {
     function Rectangulo(base, altura) {
         this.base = base;

@@ -1,6 +1,9 @@
 let nombre : string = "Nestor Kauil";
 let edad : number = 25;
-const PERSONAJE : { nombre: string, edad: number } = {
+const PERSONAJE : { 
+    nombre: string, 
+    edad: number 
+} = {
     nombre: nombre,
     edad: edad
 };
@@ -18,27 +21,37 @@ const batman: Batman = {
 
 console.log("Exercise #2: ", batman);
 
-const resultadoDoble = (a: number, b: number) => {
+const resultadoDoble = (
+    a: number, 
+    b: number
+) => {
     return (a + b) * 2; 
 };
 console.log("Exercise #3: ", resultadoDoble(2, 2));
 
-const getAvenger = (nombre: string, poder?: string, arma: string = "0") => {
-    if (arma === "0") {
+const getAvenger = (
+    nombre: string,
+    poder: string = "volar", 
+    arma?: string
+) => {
+    if (arma === void 0) {
         arma = "arco"; 
     }
 
     let mensaje;
 
     if (poder) {
+        mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
         mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma + " ";
     }
     else {
-        mensaje = nombre + " tiene un arma: " + arma;
+        mensaje = nombre + " tiene un " + poder;
+        mensaje = nombre + " tiene un: " + poder;
     }
     return mensaje;
 };
-console.log("Exercise #4: ", getAvenger("Mujer maravilla", "volar", "flecha"));
+console.log("Exercise #4: ", getAvenger("Mujer maravilla"));
+console.log("Exercise #4.1: ", getAvenger("Mujer maravilla", "ser inmortal", "lazo de la verdad"));
 
 class Rectangulo {
     public base:number;
